@@ -1,0 +1,59 @@
+RAG, Multimodal Vectorization, and Multimodal RAG
+=======================================================
+ 
+What is RAG?
+-------------
+RAG (Retrieval-Augmented Generation) is an architectural pattern in AI engineering 
+where a language model, before generating a response, first retrieves 
+relevant fragments from an external knowledge base. This solves a key LLM 
+problem: models are trained on data up to a specific date and are unaware of new events, 
+corporate documents, or specialized databases.
+ 
+Classic RAG works in two stages:
+1. Indexing: Documents are broken into chunks, each chunk 
+   is converted into an embedding vector and stored in a vector database.
+2. Retrieval + Generation: The user's query is also 
+   converted into a vector, the database searches for the top-K nearest chunks based on 
+   cosine similarity, and these chunks are passed into the LLM's context along with the question.
+ 
+The result: The model answers based on specific documents rather than from memory. 
+This eliminates hallucinations and makes the system updatable without retraining.
+ 
+Limitations of Classic RAG:
+- Works only with text.
+- Loses visual context: Tables, charts, and diagrams in PDFs turn 
+  into a meaningless jumble of characters or are lost entirely.
+- Struggles with multi-hop questions, where the answer requires linking 
+  multiple disparate facts.
+ 
+What is an Embedding?
+-------------------
+An embedding is a numerical vector in a multi-dimensional space that encodes the 
+meaning of a text fragment. OpenAI's text-embedding-3-small model generates vectors 
+with 1,536 dimensions. Texts with similar meanings receive close vectors. 
+Searching by embeddings is a search for meaning, not for keywords.
+ 
+Multimodal Vectorization
+-----------------------------
+Multimodal vectorization is the conversion into embeddings of not only text but also 
+other data types: images, tables, audio, video, code, and charts.
+ 
+Key idea: Different modalities are encoded into one shared vector 
+space. This means a text query like "engine diagram" can 
+find an image of that diagram because their vectors will be close.
+ 
+Multimodal Vectorization Models (2025):
+- CLIP (OpenAI) — The pioneer; combines text and images.
+- BLIP-2, LLaVA — Text + images with context understanding.
+- ImageBind (Meta) — Text, images, audio, video, and 3D in one space.
+- ColPali — Specialized for documents; understands a PDF as a single image, 
+  preserving visual layout, color, and table placement.
+ 
+Multimodal RAG
+--------------------
+Multimodal RAG is a system capable of indexing and retrieving data in 
+various formats — text, images, tables, diagrams, charts — and passing 
+them to a multimodal LLM (e.g., GPT-4o, Claude 3.5, or Gemini 1.5 Pro).
+ 
+According to an ACL 2025 study, multimodal RAG shows significant 
+superiority over text-based RAG in visual context search tasks.

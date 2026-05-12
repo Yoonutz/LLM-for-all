@@ -1,0 +1,30 @@
+Graph Databases and GraphRAG
+================================
+ 
+What is a Graph Database?
+-------------------------------
+A graph database is a data storage system where the basic units are 
+not rows and columns (as in SQL), but nodes and edges.
+ 
+A node is an entity: a person, company, concept, or document.
+An edge is a relationship between entities: "works at," "refers to," 
+"is part of," or "contradicts."
+ 
+Example of a Knowledge Graph:
+  [Triangle] --studies_at--> [UBD]
+  [UBD] --offers--> [AI_Engineering_Course]
+  [AI_Engineering_Course] --includes--> [RAG]
+  [RAG] --uses--> [Vector_DB]
+ 
+What is GraphRAG?
+-------------------
+GraphRAG is a RAG pattern in which the knowledge base is organized as a graph 
+rather than as a flat set of vector chunks. Developed by Microsoft Research (2024).
+ 
+Advantages of GraphRAG over Classic RAG:
+- Multi-hop questions: The graph follows the chain of relationships.
+- Explainability: You can show the path in the graph.
+- Global questions: Summarization of clusters.
+ 
+Hybrid RAG — The best production approach in 2025: 
+Vector search + Graph + BM25 + Reranker.

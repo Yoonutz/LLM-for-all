@@ -1,0 +1,5 @@
+# LangChain Documentation on RAG
+https://docs.langchain.com/langsmith/evaluation-approaches#retrieval-augmented-generation-rag
+https://docs.langchain.com/oss/python/langchain/retrieval#2-step-rag
+https://docs.langchain.com/oss/python/langchain/rag#build-a-rag-agent-with-langchain
+https://docs.langchain.com/langsmith/evaluate-rag-tutorial#evaluate-a-rag-application
